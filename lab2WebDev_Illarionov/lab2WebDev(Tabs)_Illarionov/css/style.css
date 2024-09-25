@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.content div{
+    display:none;
+}
+.content .tab1 {
+    display:block;
+}
+
+body{
+    background-color: #f2f2f2;
+}
+.content div{
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+.lineTabs{
+    list-style-type: none;
+}
+.lineTabs li{
+    display: inline-block;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    margin-right: 10px;
+    cursor: pointer;
+}
+.lineTabs li.active{
+    background-color: #4CAF50;
+    color: #fff;
+}

@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #3b3b3b;
+    font-family: Arial, sans-serif;
+    padding: 10vh 10vw;
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 5vh;   
+}
+
+.content div {
+    display: none;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.content .tab1 {
+    display: block;
+}
+
+.selectTabs_first .lineTabs {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.selectTabs_second .lineTabs {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-left:  1.5vw;
+    padding-right:  1.5vw;
+}
+
+.selectTabs_first .lineTabs li {
+    display: block;
+    background-color: #fff;
+    padding: 1em;
+    border-radius: 5px;
+    position: relative;
+    font-family: Arial, sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    flex-grow:  1;
+}
+
+.selectTabs_second .lineTabs li {
+    display: block;
+    background-color: #fff;
+    padding: 1em;
+    border-radius:10px 10px 0  0 ;
+    border: 0.1px solid #87878741;
+     
+    position: relative;
+    font-family: Arial, sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    flex-grow:  1;
+
+
+}
+
+.selectTabs_first .lineTabs li.active{
+    background-color: #2a2a2a;
+    color: #fff;
+    margin-left: 0.3vw;
+}
+
+.selectTabs_second .lineTabs li.active{
+    border: 3px solid red;
+    border-bottom: 0px solid transparent;
+    color: red; 
+    transform: translateY(+2.5px);
+}
+
+.selectTabs_second .content .active{
+
+    border: 3px solid red;  
+   
+}
+
+
+.selectTabs_first .lineTabs li.active::before 
+ {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 1.5em solid transparent;
+    border-bottom: 1.5em solid transparent;
+    border-left: 1.5em solid #2a2a2a;
+    position: absolute;
+    right: -1.47em;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.selectTabs_first, .selectTabs_second {
+    display: flex;
+
+    padding: 2vw;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 100%;
+}
+.selectTabs_first{
+    flex-direction: row;
+}
+.selectTabs_second{
+    flex-direction: column;
+}
+.selectTabs_first:nth-child(1){
+    margin: 0 2vw 0 0;
+}
+
+
+
+
+
+.selectTabs_second .content .tab3 .active {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.lineTabs li a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+

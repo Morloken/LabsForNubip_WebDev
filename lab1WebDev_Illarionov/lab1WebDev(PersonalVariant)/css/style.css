@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.menu {
+    width: 250px;
+    margin: 20px;
+}
+
+.menu-item {
+    background: #e4e7ea;
+    margin-bottom: 5px;
+}
+
+.menu-link {
+    padding: 10px;
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+    border-bottom: 1px solid #d4d9df;
+}
+
+.submenu {
+    display: none;
+    background: #ededed;
+}
+
+.submenu-item {
+    padding: 10px;
+    font-size: 14px;
+    color: #8b8b8b;
+    border-bottom: 1px solid #d4d9df;
+}
+
+.menu-item.active .submenu {
+    display: block;
+}

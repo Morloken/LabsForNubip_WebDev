@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul  {
+    margin:20px;
+    width:200px;
+    list-style:none;
+}
+li a {
+    padding:5px 10px;
+    display:block;
+    font-size:14px;
+    font-weight:bold;
+    color:#000;
+    text-decoration:none;
+    background:#e4e7ea;
+    border-bottom:1px solid #d4d9df
+}
+    
+ul ul  {
+    margin:0;
+    display:none;
+}
+ul ul a  {
+    padding-left:20px;
+    font-size:12px;
+    color:#8b8b8b;
+    background:#ededed;
+}
+
+ul li {
+    position:relative;
+}
+ul li span {
+    width:0;
+    height:0;
+    position:absolute;
+    top:9px;
+    right:9px;
+    border-top:5px solid transparent;
+    border-bottom:5px solid transparent;
+    border-left:10px solid #000;
+}
+
+ul li.active span {
+    border-top:10px solid #000;
+    border-left:5px solid transparent;
+    border-right:5px solid transparent;
+}   

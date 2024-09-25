@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Різні типи спливаючих вікон</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <h1>Різні типи спливаючих вікон</h1>
+<div class="POPUP_WINDOWS">
+    <!-- Кнопки для відкриття спливаючих вікон -->
+    <button id="lightboxBtn">Лайтбокс</button>
+    <button id="floatingBarBtn">Плаваючий Бар</button>
+    <button id="fullscreenPopupBtn">Повноекранне вікно</button>
+    <button id="slideInPopupBtn">Спливаюче вікно зі зсувом</button>
+
+    <!-- Лайтбокс -->
+    <div id="lightbox" class="popup lightbox">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2>Лайтбокс</h2>
+            <p>Це лайтбокс, він закриває весь фон і вимагає вашої уваги.</p>
+            <button class="close-popup">Закрити</button>
+        </div>
+    </div>
+
+    <!-- Плаваючий Бар -->
+    <div id="floatingBar" class="popup floating-bar">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <p>Це плаваючий бар. Він завжди видимий, слідує за прокруткою сторінки.</p>
+            <button class="close-popup">Закрити</button>
+        </div>
+    </div>
+
+    <!-- Повноекранне вікно -->
+    <div id="fullscreenPopup" class="popup fullscreen">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2>Повноекранне спливаюче вікно</h2>
+            <p>Це повноекранне спливаюче вікно, яке покриває весь екран.</p>
+            <button class="close-popup">Закрити</button>
+        </div>
+    </div>
+
+    <!-- Спливаюче вікно зі зсувом -->
+    <div id="slideInPopup" class="popup slide-in">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <p>Це спливаюче вікно зі зсувом. Воно з'являється збоку екрану.</p>
+            <button class="close-popup">Закрити</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
