@@ -21,11 +21,12 @@ $(document).ready(function() {
         }, 500);
     });
 
-    // Закрити будь-яке спливаюче вікно
-    $('.close, .close-popup').click(function() {
-        $(this).closest('.popup').fadeOut();
+    // Відкрити спливаюче вікно з формою
+    $('#formPopupBtn').click(function() {
+        $('#formPopup').fadeIn();
     });
-    // Закрити спливаюче вікно зі зсувом
+
+    // Закрити будь-яке спливаюче вікно
     $('.close, .close-popup').click(function() {
         $(this).closest('.popup').fadeOut();
     });
@@ -35,5 +36,15 @@ $(document).ready(function() {
         if ($(event.target).is('.popup')) {
             $(this).fadeOut();
         }
+    });
+
+    // Обробка відправки форми
+    $('#feedbackForm').submit(function(event) {
+        event.preventDefault(); // Запобігання перезавантаженню сторінки
+        alert('Форма відправлена!'); // Додайте обробку даних тут
+        $('#name').val('');
+        $('#message').val('');
+        
+        $('#formPopup').fadeOut(); // Закрити спливаюче вікно
     });
 });

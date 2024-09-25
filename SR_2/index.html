@@ -11,50 +11,67 @@
 <body>
 
     <h1>Різні типи спливаючих вікон</h1>
-<div class="POPUP_WINDOWS">
-    <!-- Кнопки для відкриття спливаючих вікон -->
-    <button id="lightboxBtn">Лайтбокс</button>
-    <button id="floatingBarBtn">Плаваючий Бар</button>
-    <button id="fullscreenPopupBtn">Повноекранне вікно</button>
-    <button id="slideInPopupBtn">Спливаюче вікно зі зсувом</button>
+    <div class="POPUP_WINDOWS">
+        <!-- Кнопки для відкриття спливаючих вікон -->
+        <button id="lightboxBtn">Лайтбокс</button>
+        <button id="floatingBarBtn">Плаваючий Бар</button>
+        <button id="fullscreenPopupBtn">Повноекранне вікно</button>
+        <button id="slideInPopupBtn">Спливаюче вікно зі зсувом</button>
+        <button id="formPopupBtn">Спливаюче вікно з формою</button>
 
-    <!-- Лайтбокс -->
-    <div id="lightbox" class="popup lightbox">
-        <div class="popup-content">
-            <span class="close">&times;</span>
-            <h2>Лайтбокс</h2>
-            <p>Це лайтбокс, він закриває весь фон і вимагає вашої уваги.</p>
-            <button class="close-popup">Закрити</button>
+        <!-- Лайтбокс -->
+        <div id="lightbox" class="popup lightbox">
+            <div class="popup-content">
+                <span class="close">&times;</span>
+                <h2>Лайтбокс</h2>
+                <p>Це лайтбокс, він закриває весь фон і вимагає вашої уваги.</p>
+                <button class="close-popup">Закрити</button>
+            </div>
+        </div>
+
+        <!-- Плаваючий Бар -->
+        <div id="floatingBar" class="popup floating-bar">
+            <div class="popup-content">
+                <span class="close">&times;</span>
+                <p>Це плаваючий бар. Він завжди видимий, слідує за прокруткою сторінки.</p>
+                <button class="close-popup">Закрити</button>
+            </div>
+        </div>
+
+        <!-- Повноекранне вікно -->
+        <div id="fullscreenPopup" class="popup fullscreen">
+            <div class="popup-content">
+                <span class="close">&times;</span>
+                <h2>Повноекранне спливаюче вікно</h2>
+                <p>Це повноекранне спливаюче вікно, яке покриває весь екран.</p>
+                <button class="close-popup">Закрити</button>
+            </div>
+        </div>
+
+        <!-- Спливаюче вікно зі зсувом -->
+        <div id="slideInPopup" class="popup slide-in">
+            <div class="popup-content">
+                <span class="close">&times;</span>
+                <p>Це спливаюче вікно зі зсувом. Воно з'являється збоку екрану.</p>
+                <button class="close-popup">Закрити</button>
+            </div>
+        </div>
+
+        <!-- Спливаюче вікно з формою -->
+        <div id="formPopup" class="popup">
+            <div class="popup-content">
+                <span class="close">&times;</span>
+                <h2>Форма зворотного зв'язку</h2>
+                <form id="feedbackForm">
+                    <label for="name">Ім'я:</label>
+                    <input type="text" id="name" required><br><br>
+                    <label for="message">Повідомлення:</label>
+                    <textarea id="message" required></textarea><br><br>
+                    <button type="submit">Відправити</button>
+                </form>
+                <button class="close-popup">Закрити</button>
+            </div>
         </div>
     </div>
-
-    <!-- Плаваючий Бар -->
-    <div id="floatingBar" class="popup floating-bar">
-        <div class="popup-content">
-            <span class="close">&times;</span>
-            <p>Це плаваючий бар. Він завжди видимий, слідує за прокруткою сторінки.</p>
-            <button class="close-popup">Закрити</button>
-        </div>
-    </div>
-
-    <!-- Повноекранне вікно -->
-    <div id="fullscreenPopup" class="popup fullscreen">
-        <div class="popup-content">
-            <span class="close">&times;</span>
-            <h2>Повноекранне спливаюче вікно</h2>
-            <p>Це повноекранне спливаюче вікно, яке покриває весь екран.</p>
-            <button class="close-popup">Закрити</button>
-        </div>
-    </div>
-
-    <!-- Спливаюче вікно зі зсувом -->
-    <div id="slideInPopup" class="popup slide-in">
-        <div class="popup-content">
-            <span class="close">&times;</span>
-            <p>Це спливаюче вікно зі зсувом. Воно з'являється збоку екрану.</p>
-            <button class="close-popup">Закрити</button>
-        </div>
-    </div>
-</div>
 </body>
 </html>
