@@ -1,50 +1,53 @@
-$(document).ready(function() {
-    // Відкрити лайтбокс
-    $('#lightboxBtn').click(function() {
+$(document).ready(function () {
+    // Показати повноекранне вікно
+    $('#fullscreenPopupBtn').click(function () {
+        $('#fullscreenPopup').modal('show');
+    });
+
+    // Закрити повноекранне вікно
+    $('#fullscreenPopup .close-modal, #fullscreenPopup .close').click(function () {
+        $('#fullscreenPopup').modal('hide');
+    });
+
+    // Показати спливаюче вікно зі зсувом
+    $('#slideInPopupBtn').click(function () {
+        $('#slideInPopup').addClass('show').fadeIn();
+    });
+
+    // Закрити спливаюче вікно зі зсувом
+    $('#slideInPopup .close-slide').click(function () {
+        $('#slideInPopup').removeClass('show');
+    });
+
+    // Показати лайтбокс
+    $('#lightboxBtn').click(function () {
         $('#lightbox').fadeIn();
     });
 
-    // Відкрити плаваючий бар
-    $('#floatingBarBtn').click(function() {
-        $('#floatingBar').slideDown();
+    // Закрити лайтбокс
+    $('#lightbox .close-lightbox').click(function () {
+        $('#lightbox').fadeOut();
     });
 
-    // Відкрити повноекранне вікно
-    $('#fullscreenPopupBtn').click(function() {
-        $('#fullscreenPopup').fadeIn();
+    // Показати плаваючий бар
+    $('#floatingBarBtn').click(function () {
+        $('#floatingBar').fadeIn();
     });
 
-    // Відкрити спливаюче вікно зі зсувом
-    $('#slideInPopupBtn').click(function() {
-        $('#slideInPopup').show().animate({
-            right: "0"
-        }, 500);
+    // Закрити плаваючий бар
+    $('#floatingBar .close-floating-bar').click(function () {
+        $('#floatingBar').fadeOut();
     });
 
-    // Відкрити спливаюче вікно з формою
-    $('#formPopupBtn').click(function() {
-        $('#formPopup').fadeIn();
-    });
-
-    // Закрити будь-яке спливаюче вікно
-    $('.close, .close-popup').click(function() {
-        $(this).closest('.popup').fadeOut();
-    });
-
-    // Закрити лайтбокс або повноекранне вікно при кліку на темний фон
-    $('.lightbox, .fullscreen').click(function(event) {
-        if ($(event.target).is('.popup')) {
-            $(this).fadeOut();
-        }
+    // Показати спливаюче вікно з формою
+    $('#formPopupBtn').click(function () {
+        $('#formPopup').modal('show');
     });
 
     // Обробка відправки форми
-    $('#feedbackForm').submit(function(event) {
-        event.preventDefault(); // Запобігання перезавантаженню сторінки
-        alert('Форма відправлена!'); // Додайте обробку даних тут
-        $('#name').val('');
-        $('#message').val('');
-        
-        $('#formPopup').fadeOut(); // Закрити спливаюче вікно
+    $('#feedbackForm').on('submit', function (event) {
+        event.preventDefault();
+        alert('Форма відправлена!');
+        $('#formPopup').modal('hide');
     });
 });

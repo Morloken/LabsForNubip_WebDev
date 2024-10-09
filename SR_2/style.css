@@ -1,59 +1,31 @@
 /* Загальні стилі для сторінки */
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
+    background-color: #053e64;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
-.POPUP_WINDOWS {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+.content-wrapper {
+    background-color: #053e64;
+    width: 100%;
+    height: 100vh;
+    align-self: center;
 }
-h1 {
+.h1{
     text-align: center;
+    color: white;
 }
 
 button {
-    padding: 10px 20px;
     margin: 10px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-/* Загальні стилі для спливаючих вікон */
-.popup {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-}
-
-.popup-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: relative;
-    text-align: center;
-}
-
-.close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    cursor: pointer;
-    color: #555;
-}
-
-.close:hover {
-    color: red;
 }
 
 /* Лайтбокс */
 .lightbox {
+    display: none;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -62,55 +34,80 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1050;
+}
+
+.lightbox-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 50%;
 }
 
 /* Плаваючий бар */
 .floating-bar {
+    display: none;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #333;
+    background-color: #343a40;
     color: white;
-    padding: 10px 0;
-}
-
-.floating-bar .popup-content {
-    width: 100%;
+    padding: 10px;
     text-align: center;
-}
-.floating-bar p {
-    color: black;
+    z-index: 1050;
 }
 
 /* Повноекранне вікно */
-.fullscreen {
-    top: 0;
+.modal-fullscreen {
+    position: fixed;
+    top: 20vw;
+    right: 0;
+    bottom: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: max-content;
+    height: max-content; 
+    
 }
 
-.fullscreen .popup-content {
-    width: 50%;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.9);
-    border: 2px solid white;
+/* Вирівнювання вмісту модального вікна */
+.modal-content {
+    width: auto;
+    height: auto;
+    margin: auto; 
+}
+
+/* Стилі для кнопки закриття */
+.close {
+    color: #000; 
+    font-size: 1.5rem; 
+}
+
+/* Сховати кнопку закриття у футері */
+.modal-footer {
+    display: none; 
 }
 
 /* Спливаюче вікно зі зсувом */
-.slide-in {
+.slide-in-popup {
+    display: none;
+    position: fixed;
     bottom: 0;
-    right: 0;
+    right: -300px;
     width: 300px;
     background-color: #f9f9f9;
     border-left: 2px solid #333;
     padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1050;
 }
 
-.slide-in .popup-content {
-    width: 100%;
+.slide-in-popup.show {
+    right: 0;
+    transition: right 0.3s ease;
+}
+.void{
+    height: 1000px;
+    background-color: #053e64;
 }

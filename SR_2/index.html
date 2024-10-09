@@ -4,74 +4,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Різні типи спливаючих вікон</title>
-    <link rel="stylesheet" href="style.css">
+
+    <!-- Підключаємо Bootstrap 4 для модальних вікон -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
     <script src="jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Підключаємо AdminLTE -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/css/adminlte.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/js/adminlte.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
+
 <body>
 
-    <h1>Різні типи спливаючих вікон</h1>
-    <div class="POPUP_WINDOWS">
-        <!-- Кнопки для відкриття спливаючих вікон -->
-        <button id="lightboxBtn">Лайтбокс</button>
-        <button id="floatingBarBtn">Плаваючий Бар</button>
-        <button id="fullscreenPopupBtn">Повноекранне вікно</button>
-        <button id="slideInPopupBtn">Спливаюче вікно зі зсувом</button>
-        <button id="formPopupBtn">Спливаюче вікно з формою</button>
-
-        <!-- Лайтбокс -->
-        <div id="lightbox" class="popup lightbox">
-            <div class="popup-content">
-                <span class="close">&times;</span>
-                <h2>Лайтбокс</h2>
-                <p>Це лайтбокс, він закриває весь фон і вимагає вашої уваги.</p>
-                <button class="close-popup">Закрити</button>
+    <div class="content-wrapper">
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-12">
+                        <h1 class="h1">Різні типи спливаючих вікон</h1>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Плаваючий Бар -->
-        <div id="floatingBar" class="popup floating-bar">
-            <div class="popup-content">
-                <span class="close">&times;</span>
-                <p>Це плаваючий бар. Він завжди видимий, слідує за прокруткою сторінки.</p>
-                <button class="close-popup">Закрити</button>
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <button id="lightboxBtn" class="btn btn-primary">Лайтбокс</button>
+                    <button id="floatingBarBtn" class="btn btn-secondary">Плаваючий Бар</button>
+                    <button id="fullscreenPopupBtn" class="btn btn-warning">Повноекранне вікно</button>
+                    <button id="slideInPopupBtn" class="btn btn-info">Спливаюче вікно зі зсувом</button>
+                    <button id="formPopupBtn" class="btn btn-success">Спливаюче вікно з формою</button>
+                </div>
             </div>
-        </div>
+        </section>
+    </div>
 
-        <!-- Повноекранне вікно -->
-        <div id="fullscreenPopup" class="popup fullscreen">
-            <div class="popup-content">
-                <span class="close">&times;</span>
-                <h2>Повноекранне спливаюче вікно</h2>
-                <p>Це повноекранне спливаюче вікно, яке покриває весь екран.</p>
-                <button class="close-popup">Закрити</button>
-            </div>
-        </div>
-
-        <!-- Спливаюче вікно зі зсувом -->
-        <div id="slideInPopup" class="popup slide-in">
-            <div class="popup-content">
-                <span class="close">&times;</span>
-                <p>Це спливаюче вікно зі зсувом. Воно з'являється збоку екрану.</p>
-                <button class="close-popup">Закрити</button>
-            </div>
-        </div>
-
-        <!-- Спливаюче вікно з формою -->
-        <div id="formPopup" class="popup">
-            <div class="popup-content">
-                <span class="close">&times;</span>
-                <h2>Форма зворотного зв'язку</h2>
-                <form id="feedbackForm">
-                    <label for="name">Ім'я:</label>
-                    <input type="text" id="name" required><br><br>
-                    <label for="message">Повідомлення:</label>
-                    <textarea id="message" required></textarea><br><br>
-                    <button type="submit">Відправити</button>
-                </form>
-                <button class="close-popup">Закрити</button>
+    <!-- Повноекранне вікно -->
+    <div id="fullscreenPopup" class="modal fade" tabindex="-1" aria-labelledby="fullscreenPopupLabel" style="display: none;" aria-modal="true" role="dialog">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="fullscreenPopupLabel">Повноекранне спливаюче вікно</h5>
+                    <button type="button" class="close" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Це повноекранне спливаюче вікно, яке покриває весь екран.
+                    <button type="button" class="btn btn-secondary close-modal">Закрити</button>
+                </div>
+                <div class="modal-footer">
+                    
+                </div>
             </div>
         </div>
     </div>
+
+    <!-- Спливаюче вікно зі зсувом -->
+    <div id="slideInPopup" class="slide-in-popup">
+        <div class="popup-content">
+            <h5>Спливаюче вікно зі зсувом</h5>
+            <p>Це спливаюче вікно зі зсувом. Воно з'являється збоку екрану.</p>
+            <button class="btn btn-danger close-slide">Закрити</button>
+        </div>
+    </div>
+
+    <!-- Лайтбокс -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <h5>Лайтбокс</h5>
+            <p>Це лайтбокс, він закриває весь фон і вимагає вашої уваги. Закривається лише при натиску на кнопки(не на екран)</p>
+            <button class="btn btn-danger close-lightbox">Закрити</button>
+        </div>
+    </div>
+
+    <!-- Плаваючий Бар -->
+    <div id="floatingBar" class="floating-bar">
+        <p>Це плаваючий бар. Він завжди видимий, слідує за прокруткою сторінки. Можна перевірити прокрутивши вниз</p>
+        <button class="btn btn-danger close-floating-bar">Закрити</button>
+    </div>
+
+    <!-- Спливаюче вікно з формою -->
+    <div id="formPopup" class="modal fade" tabindex="-1" aria-labelledby="formPopupLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="formPopupLabel">Форма зворотного зв'язку</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="feedbackForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Ім'я:</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Повідомлення:</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Відправити</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрити</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div  class="void"></div>
+    
 </body>
 </html>
